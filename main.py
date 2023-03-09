@@ -25,23 +25,19 @@ def main():
     # first line - n and m
     # n - thread count 
     # m - job count
-    entry = input()
-    if entry[0]=="I":
-        line1=input()
-        n = int(line1[0])
-        m = int(line1[-1])
-        data = list(map(int, input().split()))
-        if len(data)!=m:
-            print("Job count doesn't match")
-            exit()
-        if n>m:
-            print("More threads than jobs! Excess ignored.")
-            n=m
-        result = parallel_processing(n, m, data)
-        for thread, task in result:
-            print(thread, task)
-    else:
-        print("Incorrect entry")
+    line1=input()
+    n = int(line1[0])
+    m = int(line1[-1])
+    data = list(map(int, input().split()))
+    if len(data)!=m:
+        print("Job count doesn't match")
+        exit()
+    if n>m:
+        print("More threads than jobs! Excess ignored.")
+        n=m
+    result = parallel_processing(n, m, data)
+    for thread, task in result:
+        print(thread, task)
 
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
