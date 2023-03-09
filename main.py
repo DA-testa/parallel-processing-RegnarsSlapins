@@ -16,7 +16,6 @@ def parallel_processing(n, m, data):
         del data[0]
         output.append([index, min(endOfProcess)])
         endOfProcess[index]=endOfProcess[index]+nextJobTime
-    print(output)
     return output
 
 def main():
